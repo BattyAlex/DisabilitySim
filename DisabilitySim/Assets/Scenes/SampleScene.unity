@@ -544,6 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260823857}
   - component: {fileID: 260823856}
+  - component: {fileID: 260823858}
   m_Layer: 0
   m_Name: Condition Manager
   m_TagString: Untagged
@@ -587,6 +588,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &260823858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260823855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e496fadbc4c977942be5caa44e1117a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisabilitySim.ColorBlindnessEffect
+  m_ConditionManager: {fileID: 260823856}
+  m_Feature: {fileID: -9218069465070706436, guid: 53a413327819a984d8ab1618c9e90a10, type: 2}
 --- !u!1 &274949407
 GameObject:
   m_ObjectHideFlags: 0
