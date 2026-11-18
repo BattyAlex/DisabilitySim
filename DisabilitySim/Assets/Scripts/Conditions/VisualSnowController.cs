@@ -8,39 +8,45 @@ public class VisualSnowController : MonoBehaviour
     ConditionManager m_ConditionManager;
     public Canvas blackBoardText;
     public GameObject visualSnowEffect;
-    public Material test;
+    public Material visualSnowMaterial;
+    public Slider migraineIntensity;
+    public float minValue = 0.05f;
+    public float maxValue = 0.9f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         m_ConditionManager.ActiveConditionChanged += OnConditionChanged;
+
+        migraineIntensity.minValue = minValue;
+        migraineIntensity.maxValue = maxValue;
+
+        migraineIntensity.value = visualSnowMaterial.GetFloat("_visualSnowAlphaValue");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(blackBoardText.isActiveAndEnabled)
+        {
+            visualSnowMaterial.SetFloat("_visualSnowAlphaValue", migraineIntensity.value);
+        }
         
         // I need to make it so that the plane follows the camera... Camera.main.transform?
     }
 
     void OnConditionChanged(VisualCondition condition)
     {
-        
-        Debug.Log("Hi. Condition changed to:" + condition);
-        if(condition.DisplayName.Equals("Visual Snow"))
+        if(condition != null && condition.DisplayName.Equals("Visual Snow"))
         {
-            Debug.Log("Visual Snow in effect");
             blackBoardText.gameObject.SetActive(true);
             visualSnowEffect.SetActive(true);
-
-            test.SetFloat("visualSnowAlphaValue", 0.9f);
         }
         else
         {
            blackBoardText.gameObject.SetActive(false); 
            visualSnowEffect.SetActive(false);
         }
-        
     }
 
     

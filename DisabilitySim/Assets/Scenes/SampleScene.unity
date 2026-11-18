@@ -348,8 +348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisualSnowController
   m_ConditionManager: {fileID: 260823856}
   blackBoardText: {fileID: 1733499284}
-  visualSnowEffect: {fileID: 1281063291}
-  test: {fileID: -876546973899608171, guid: 39137e7818eb82b4789da7bfa3d66041, type: 3}
+  visualSnowEffect: {fileID: 396954486}
+  test: {fileID: 2100000, guid: 558d3927ee642e04e8982f3407e45ec2, type: 2}
 --- !u!1 &116458758
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &396954487
 Transform:
   m_ObjectHideFlags: 0
@@ -3288,7 +3288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1281063292
 Transform:
   m_ObjectHideFlags: 0
