@@ -6,12 +6,18 @@ public class VisualSnowController : MonoBehaviour
 {
     [SerializeField]
     ConditionManager m_ConditionManager;
-    public Canvas blackBoardText;
-    public GameObject visualSnowEffect;
-    public Material visualSnowMaterial;
-    public Slider migraineIntensity;
-    public float minValue = 0.05f;
-    public float maxValue = 0.9f;
+    [SerializeField, Tooltip("Canvas used to display the slider and the text.")]
+    Canvas blackBoardText;
+    [SerializeField, Tooltip("The plane responsible for creating the visual effect.")]
+    GameObject visualSnowEffect;
+    [SerializeField, Tooltip("The material used by the visual effect.")]
+    Material visualSnowMaterial;
+    [SerializeField, Tooltip("Slider for setting the migraine's intensity.")]
+    Slider migraineIntensity;
+    [SerializeField, Tooltip("Minimum value of the slider. If changed, the shader's values must be changed as well.")]
+    float minValue = 0.05f;
+    [SerializeField, Tooltip("Maximum value of the slider. If changed, the shader's values must be changed as well.")]
+    float maxValue = 0.9f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
