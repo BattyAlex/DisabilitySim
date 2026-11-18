@@ -326,13 +326,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92757203}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.957, y: 2.02009, z: -0.8227}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1733499281}
-  m_Father: {fileID: 2078817914}
+  m_Father: {fileID: 260823857}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &92757205
 MonoBehaviour:
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92757203}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab0ad3082003a79479b71e91ddcdfd4b, type: 3}
   m_Name: 
@@ -349,7 +349,10 @@ MonoBehaviour:
   m_ConditionManager: {fileID: 260823856}
   blackBoardText: {fileID: 1733499284}
   visualSnowEffect: {fileID: 396954486}
-  test: {fileID: 2100000, guid: 558d3927ee642e04e8982f3407e45ec2, type: 2}
+  visualSnowMaterial: {fileID: 0}
+  migraineIntensity: {fileID: 0}
+  minValue: 0.05
+  maxValue: 0.9
 --- !u!1 &116458758
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260823857}
   - component: {fileID: 260823856}
+  - component: {fileID: 260823858}
   m_Layer: 0
   m_Name: Condition Manager
   m_TagString: Untagged
@@ -708,9 +712,29 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 92757204}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &260823858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260823855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0ad3082003a79479b71e91ddcdfd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VisualSnowController
+  m_ConditionManager: {fileID: 260823856}
+  blackBoardText: {fileID: 1733499284}
+  visualSnowEffect: {fileID: 396954486}
+  visualSnowMaterial: {fileID: 2100000, guid: 558d3927ee642e04e8982f3407e45ec2, type: 2}
+  migraineIntensity: {fileID: 861832841}
+  minValue: 0.05
+  maxValue: 0.9
 --- !u!1 &274949407
 GameObject:
   m_ObjectHideFlags: 0
@@ -6250,38 +6274,6 @@ Transform:
   - {fileID: 653550734}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2078817913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2078817914}
-  m_Layer: 0
-  m_Name: Conditions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2078817914
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078817913}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.957, y: 2.02009, z: -0.8227}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 92757204}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2130376065
 GameObject:
   m_ObjectHideFlags: 0
@@ -6551,4 +6543,3 @@ SceneRoots:
   - {fileID: 936832751}
   - {fileID: 621018892}
   - {fileID: 1944495258}
-  - {fileID: 2078817914}
