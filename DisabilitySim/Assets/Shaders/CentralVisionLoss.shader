@@ -1,6 +1,4 @@
-// Draws a soft, irregular grey blind spot (scotoma) in the middle of each eye's view.
-// Meant for a quad parented to the camera. The spot is placed by viewing angle per eye,
-// so it lines up in VR even though the quad sits between the two eyes.
+
 Shader "DisabilitySim/CentralVisionLoss"
 {
     Properties
@@ -13,7 +11,8 @@ Shader "DisabilitySim/CentralVisionLoss"
 
     SubShader
     {
-        Tags { "RenderType" = "Transparent" "Queue" = "Transparent+100" "RenderPipeline" = "UniversalPipeline" "IgnoreProjector" = "True" }
+        
+        Tags { "RenderType" = "Transparent" "Queue" = "Transparent-1" "RenderPipeline" = "UniversalPipeline" "IgnoreProjector" = "True" }
 
         Pass
         {
@@ -67,18 +66,14 @@ Shader "DisabilitySim/CentralVisionLoss"
             {
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
 
-                // Direction from this eye to the pixel, in this eye's view space (forward is -Z).
-                // Done in float rather than TransformWorldToViewDir (real3), since half precision blurs small angles on Quest.
                 float3 dirVS = normalize(mul((float3x3)UNITY_MATRIX_V, input.positionWS - _WorldSpaceCameraPos));
                 float angleFromCenter = degrees(acos(saturate(-dirVS.z)));
 
-                // Wobble the edge around the circle so it doesn't look like a perfect disc.
                 float around = atan2(dirVS.y, dirVS.x);
                 float wobble = 0.5 * sin(3.0 * around + 1.3) + 0.3 * sin(5.0 * around + 0.4) + 0.2 * sin(8.0 * around + 2.1);
                 float radius = _Radius * (1.0 + _Irregularity * wobble);
 
                 float alpha = 1.0 - smoothstep(radius - _Softness, radius + _Softness, angleFromCenter);
-                // Fade the whole spot out as the radius approaches 0.
                 alpha *= saturate(_Radius / _Softness);
 
                 return half4(_ScotomaColor.rgb, alpha * _ScotomaColor.a);

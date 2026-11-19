@@ -27,7 +27,6 @@ public class CentralVisionLossController : MonoBehaviour
     {
         m_ConditionManager.ActiveConditionChanged += OnConditionChanged;
 
-        // Use a copy of the material so play mode doesn't change the material asset.
         m_Material = centralVisionLossEffect.GetComponent<Renderer>().material;
 
         scotomaSize.minValue = minValue;
