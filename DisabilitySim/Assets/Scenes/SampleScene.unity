@@ -862,6 +862,7 @@ MonoBehaviour:
   scotomaSize: {fileID: 81585822}
   minValue: 3
   maxValue: 30
+
 --- !u!1 &274949407
 GameObject:
   m_ObjectHideFlags: 0
