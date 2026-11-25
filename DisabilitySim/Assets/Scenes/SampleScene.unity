@@ -779,6 +779,9 @@ GameObject:
   - component: {fileID: 260823856}
   - component: {fileID: 260823858}
   - component: {fileID: 260823859}
+  - component: {fileID: 260823860}
+  m_Layer: 0
+  m_Name: Condition Manager
   m_Layer: 0
   m_Name: Condition Manager
   m_TagString: Untagged
@@ -862,7 +865,26 @@ MonoBehaviour:
   scotomaSize: {fileID: 81585822}
   minValue: 3
   maxValue: 30
-
+--- !u!114 &260823860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260823855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e510a50369d7475793f48128167fee9c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::DisabilitySim.LightSensitivityController
+  m_ConditionManager: {fileID: 260823856}
+  m_LightSensitivity: {fileID: 11400000, guid: a1504324d42f84c4487b0562f09bbdce, type: 2}
+  m_RendererFeatures:
+  - {fileID: 4860851327453357101, guid: 53a413327819a984d8ab1618c9e90a10, type: 2}
+  - {fileID: 4860851327453357101, guid: b4712bf26326e8a4286df35b4a6d2b19, type: 2}
+  m_ExposureMaterial: {fileID: 2100000, guid: 70bbc6e46e374a469293619d2e86ffc2, type: 2}
+  m_MenuContent: {fileID: 1727110036}
+  m_MenuTextStyle: {fileID: 2013300573}
 --- !u!1 &274949407
 GameObject:
   m_ObjectHideFlags: 0
