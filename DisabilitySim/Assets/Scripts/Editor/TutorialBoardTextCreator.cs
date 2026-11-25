@@ -34,8 +34,7 @@ namespace DisabilitySim.Editor
             "• <b>Pick a condition:</b> point at the menu and press the trigger\n" +
             "• <b>Grab objects:</b> hold the grip button\n" +
             "• <b>Read the book:</b> pick it up and tap the page edges or the Next / Previous buttons\n" +
-            "• <b>Move:</b> left thumbstick\n" +
-            "• <b>Turn:</b> right thumbstick";
+            "• <b>Move:</b> left thumbstick or you can teleport with right thumbstick\n";
 
         [MenuItem("Tools/DisabilitySim/Create Tutorial Board Text")]
         static void CreateBoardText()
