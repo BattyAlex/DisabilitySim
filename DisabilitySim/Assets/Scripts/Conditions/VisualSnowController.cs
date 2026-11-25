@@ -27,6 +27,7 @@ public class VisualSnowController : MonoBehaviour
         migraineIntensity.minValue = minValue;
         migraineIntensity.maxValue = maxValue;
 
+        visualSnowMaterial.SetFloat("_visualSnowAlphaValue", 0.2f);
         migraineIntensity.value = visualSnowMaterial.GetFloat("_visualSnowAlphaValue");
     }
 
